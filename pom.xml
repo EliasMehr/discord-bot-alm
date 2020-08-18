@@ -18,13 +18,6 @@
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
             <version>4.2.0_194</version>
-            <type>pom</type>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
         </dependency>
     </dependencies>
 
@@ -35,5 +28,4 @@
             <url>https://jcenter.bintray.com</url>
         </repository>
     </repositories>
-
 </project>
