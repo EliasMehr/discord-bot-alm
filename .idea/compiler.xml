@@ -9,6 +9,8 @@
         <module name="Discord-bot-alm" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="14" />
+    <bytecodeTargetLevel>
+      <module name="Discord-bot-alm" target="13" />
+    </bytecodeTargetLevel>
   </component>
 </project>

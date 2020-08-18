@@ -1,11 +1,10 @@
 package Bot;
 
 import lombok.Getter;
-import net.dv8tion.jda.api.JDA;
 
 @Getter
 public class DiscordBot {
-    private JDA API;
+
     public static final String prefix = "$";
     private final String token = "ADD_BOT_CLIENT_SECRET_KEY_HERE";
 
