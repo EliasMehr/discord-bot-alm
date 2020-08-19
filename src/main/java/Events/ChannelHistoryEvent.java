@@ -38,7 +38,7 @@ public class ChannelHistoryEvent extends ListenerAdapter {
                 event
                         .getChannel()
                         .deleteMessages(messageHistory)
-                        .complete();
+                        .queue();
 
                 iCard.setColor(GREEN);
                 iCard.setTitle("Success");
