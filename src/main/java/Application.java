@@ -1,4 +1,7 @@
 import Bot.DiscordBot;
+import Events.ChannelHistoryEvent;
+import Events.InvitationEvent;
+import Events.MathEvents;
 
 import javax.security.auth.login.LoginException;
 import static net.dv8tion.jda.api.OnlineStatus.ONLINE;
@@ -15,7 +18,10 @@ public class Application {
             discordBot.getAPI().getPresence().setStatus(ONLINE);
 
         // 3. Add event classes to Discord bot object ( All event classes need to extend ListenerAdapter )
-            // 3.1 Let's create events and add them to the bot :)
+            discordBot.addEventListener(new InvitationEvent());
+            discordBot.addEventListener(new MathEvents());
+            discordBot.addEventListener(new ChannelHistoryEvent());
+
         } catch (LoginException e) {
             e.printStackTrace();
         }
