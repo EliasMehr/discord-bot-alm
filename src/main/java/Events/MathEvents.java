@@ -55,20 +55,10 @@ public class MathEvents extends ListenerAdapter {
         double secondNumber = Double.parseDouble(args[3]);
         double result = 0;
         switch(args[2]) {
-            case "+":
-               result = firstNumber + secondNumber;
-               break;
-            case "-":
-                result = firstNumber - secondNumber;
-                break;
-            case "/":
-                result = firstNumber / secondNumber;
-                break;
-            case "*":
-                result = firstNumber * secondNumber;
-                break;
-            default:
-                break;
+            case "+" -> result = firstNumber + secondNumber;
+            case "-" -> result = firstNumber - secondNumber;
+            case "/" -> result = firstNumber / secondNumber;
+            case "*" -> result = firstNumber * secondNumber;
         }
         return result;
     }
