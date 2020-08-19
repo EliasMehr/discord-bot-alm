@@ -8,7 +8,7 @@ import javax.security.auth.login.LoginException;
 import java.util.EnumSet;
 
 public class DiscordBot {
-    public static final String prefix = "$";
+    public static final String PREFIX = "$";
     private final JDA API;
     private final String TOKEN = "ADD_BOT_CLIENT_SECRET_KEY_HERE"; // Keep token secured, use System.getenv("$TOKEN_VARIABLE")
 
