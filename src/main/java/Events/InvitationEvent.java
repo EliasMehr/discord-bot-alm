@@ -11,7 +11,6 @@ public class InvitationEvent extends ListenerAdapter {
     public void onGuildMessageReceived(@NotNull GuildMessageReceivedEvent event) {
         String[] args = event.getMessage().getContentRaw().split("\\s+");
 
-
         if (args[0].equalsIgnoreCase(PREFIX + "invite")) {
 
             String invitationURL = event.getChannel().createInvite().complete().getUrl();
