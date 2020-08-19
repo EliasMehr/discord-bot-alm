@@ -5,11 +5,11 @@ import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
-
 import static Bot.DiscordBot.PREFIX;
-import static java.awt.Color.*;
+import static java.awt.Color.ORANGE;
+import static java.awt.Color.GREEN;
+import static java.awt.Color.RED;
 
 public class ChannelHistoryEvent extends ListenerAdapter {
 
