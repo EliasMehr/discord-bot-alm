@@ -10,7 +10,7 @@ import java.util.EnumSet;
 public class DiscordBot {
     public static final String PREFIX = "$";
     private final JDA API;
-    private final String TOKEN = "ADD_BOT_CLIENT_SECRET_KEY_HERE"; // Keep token secured, use System.getenv("$TOKEN_VARIABLE")
+    private final String TOKEN = System.getenv("BOT_TOKEN"); // Keep token secured, use System.getenv("$TOKEN_VARIABLE")
 
     public DiscordBot() throws LoginException {
         // 1. Setup a EnumSet of GatewayIntent and load all permissions to list
