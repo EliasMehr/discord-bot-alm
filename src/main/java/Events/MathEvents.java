@@ -1,18 +1,16 @@
 package Events;
 
-import Bot.DiscordBot;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
 import javax.annotation.Nonnull;
-import static Bot.DiscordBot.prefix;
+import static Bot.DiscordBot.PREFIX;
 
 public class MathEvents extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
         String[] args = event.getMessage().getContentRaw().split("\\s+");
-        if(args[0].equalsIgnoreCase(prefix + "calc")) {
+        if(args[0].equalsIgnoreCase(PREFIX + "calc")) {
             if(args.length < 3) {
                 event.getChannel().sendMessage("Wrong input, correct Format is " +
                         " [Number] [Operator] [Number]").queue();
@@ -37,15 +35,10 @@ public class MathEvents extends ListenerAdapter {
 
     public boolean isOperator(String str) {
         if(str.length() == 1) {
-            switch(str) {
-                case "+":
-                case "-":
-                case "*":
-                case "/":
-                    return true;
-                default:
-                    return false;
-            }
+            return switch (str) {
+                case "+", "-", "*", "/" -> true;
+                default -> false;
+            };
         }
         return false;
     }
