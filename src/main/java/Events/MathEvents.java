@@ -5,14 +5,14 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import javax.annotation.Nonnull;
+import static Bot.DiscordBot.prefix;
 
 public class MathEvents extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
         String[] args = event.getMessage().getContentRaw().split("\\s+");
-        if(args[0].equalsIgnoreCase(DiscordBot.prefix + "calc")) {
-
+        if(args[0].equalsIgnoreCase(prefix + "calc")) {
             if(args.length < 3) {
                 event.getChannel().sendMessage("Wrong input, correct Format is " +
                         " [Number] [Operator] [Number]").queue();
