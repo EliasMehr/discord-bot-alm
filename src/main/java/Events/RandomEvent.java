@@ -1,23 +1,22 @@
 package Events;
 
-import Bot.DiscordBot;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
 import javax.annotation.Nonnull;
 import java.awt.*;
 import java.util.Random;
 
 import static Bot.DiscordBot.PREFIX;
+import static java.awt.Color.BLUE;
 
 public class RandomEvent extends ListenerAdapter {
     private EmbedBuilder card = new EmbedBuilder();
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
-        card.setColor(Color.BLUE);
-        String[] args = event.getMessage().getContentRaw().split("//s+");
+        card.setColor(BLUE);
+        String[] args = event.getMessage().getContentRaw().split("\\s+");
 
         if(!args[0].startsWith(PREFIX)){ //If the prefix is not present, end method and do nothing
             return;
