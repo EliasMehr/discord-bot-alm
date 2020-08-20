@@ -1,58 +1,50 @@
 package Events;
 
+import Handlers.MathHandlers;
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import javax.annotation.Nonnull;
+
 import static Bot.DiscordBot.PREFIX;
+import static java.awt.Color.GREEN;
+import static java.awt.Color.RED;
 
 public class MathEvents extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
+
+        MathHandlers mathHandlers = new MathHandlers();
+
+        // Response card
+        EmbedBuilder iCard = new EmbedBuilder();
+
+
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         if(args[0].equalsIgnoreCase(PREFIX + "calc")) {
             if(args.length < 3) {
-                event.getChannel().sendMessage("Wrong input, correct Format is " +
-                        " [Number] [Operator] [Number]").queue();
+                iCard.setColor(RED);
+                iCard.setTitle("Bad inputs", null);
+                iCard.setDescription("Wrong input, correct Format is " +
+                        " [Number] space [Operator] space [Number]");
+                event
+                        .getChannel()
+                        .sendMessage(iCard.build())
+                        .queue();
             }
 
-            else if(isNumber(args[1]) && isOperator(args[2]) && isNumber(args[3])) {
-                char operator = args[2].charAt(0);
-                event.getChannel().sendMessage(args[1] + " " + args[2] + " " + args[3] + " = " + calcResult(args)).queue();
+            else if(args[1].matches("\\d+") && mathHandlers.isOperator(args[2]) && args[3].matches("\\d+")) {
+                iCard.setColor(GREEN);
+                iCard.setTitle("Result", null);
+                iCard.setDescription(args[1] + " " + args[2] + " " + args[3] + " = " + mathHandlers.calcResult(args));
+
+                event
+                        .getChannel()
+                        .sendMessage(iCard.build())
+                        .queue();
             }
         }
     }
 
-    public boolean isNumber(String str) {
-        try {
-            double number = Double.parseDouble(str);
-            return true;
-        }
-        catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    public boolean isOperator(String str) {
-        if(str.length() == 1) {
-            return switch (str) {
-                case "+", "-", "*", "/" -> true;
-                default -> false;
-            };
-        }
-        return false;
-    }
-
-    public double calcResult(String[] args) {
-        double firstNumber = Double.parseDouble(args[1]);
-        double secondNumber = Double.parseDouble(args[3]);
-        double result = 0;
-        switch(args[2]) {
-            case "+" -> result = firstNumber + secondNumber;
-            case "-" -> result = firstNumber - secondNumber;
-            case "/" -> result = firstNumber / secondNumber;
-            case "*" -> result = firstNumber * secondNumber;
-        }
-        return result;
-    }
 }
