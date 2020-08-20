@@ -11,14 +11,11 @@ import static java.awt.Color.GREEN;
 import static java.awt.Color.RED;
 
 public class MathEvents extends ListenerAdapter {
+    MathHandlers mathHandlers = new MathHandlers();
+    EmbedBuilder iCard = new EmbedBuilder();
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
-
-        MathHandlers mathHandlers = new MathHandlers();
-
-        // Response card
-        EmbedBuilder iCard = new EmbedBuilder();
 
 
         String[] args = event.getMessage().getContentRaw().split("\\s+");
