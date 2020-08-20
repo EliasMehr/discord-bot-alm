@@ -3,4 +3,5 @@ Events/MathEvents.class
 Events/InvitationEvent.class
 Events/RandomEvent.class
 Application.class
-Bot/DiscordBot.class
+Bot\DiscordBot.class
+Events\MathEvents.class

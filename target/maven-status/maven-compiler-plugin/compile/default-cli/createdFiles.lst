@@ -1,0 +1,5 @@
+Events\ChannelHistoryEvent.class
+Events\InvitationEvent.class
+Application.class
+Bot\DiscordBot.class
+Events\MathEvents.class
