@@ -17,7 +17,6 @@ public class MathEvents extends ListenerAdapter {
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
 
-
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         if(args[0].equalsIgnoreCase(PREFIX + "calc")) {
             if(args.length < 3) {
@@ -31,7 +30,7 @@ public class MathEvents extends ListenerAdapter {
                         .queue();
             }
 
-            else if(args[1].matches("\\d+") && mathHandlers.isOperator(args[2]) && args[3].matches("\\d+")) {
+            else if(args[1].matches("(\\d+(?:\\.\\d+)?)") && mathHandlers.isOperator(args[2]) && args[3].matches("(\\d+(?:\\.\\d+)?)")) {
                 iCard.setColor(GREEN);
                 iCard.setTitle("Result", null);
                 iCard.setDescription(args[1] + " " + args[2] + " " + args[3] + " = " + mathHandlers.calcResult(args));

@@ -24,7 +24,6 @@ public class MathHandlers {
             case "/" -> result = firstNumber / secondNumber;
             case "*" -> result = firstNumber * secondNumber;
         }
-
         DecimalFormat format = new DecimalFormat("0.#");
         return format.format(result);
     }
