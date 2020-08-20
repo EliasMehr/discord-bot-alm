@@ -1,8 +1,5 @@
 import Bot.DiscordBot;
-import Events.ChannelHistoryEvent;
-import Events.InvitationEvent;
-import Events.MathEvents;
-import Events.RandomEvent;
+import Events.*;
 
 import javax.security.auth.login.LoginException;
 import static net.dv8tion.jda.api.OnlineStatus.ONLINE;
@@ -23,6 +20,7 @@ public class Application {
             discordBot.addEventListener(new MathEvents());
             discordBot.addEventListener(new ChannelHistoryEvent());
             discordBot.addEventListener(new RandomEvent());
+            discordBot.addEventListener(new HelperEvent());
 
         } catch (LoginException e) {
             e.printStackTrace();

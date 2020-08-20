@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 Events\ChannelHistoryEvent.class
 Events\InvitationEvent.class
-=======
-Events/ChannelHistoryEvent.class
-Events/MathEvents.class
-Events/InvitationEvent.class
-Events/RandomEvent.class
->>>>>>> master
 Application.class
 Bot\DiscordBot.class
+Events\RandomEvent.class
 Events\MathEvents.class
