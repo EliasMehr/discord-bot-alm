@@ -27,8 +27,5 @@ public class Application {
         } catch (LoginException e) {
             e.printStackTrace();
         }
-
-
-        //Trying to add something I'm not allowed to without pull request
     }
 }
