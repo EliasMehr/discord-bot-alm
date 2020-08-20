@@ -1,2 +1,5 @@
 /Users/eliasmehr/projects/Discord-bot-alm/src/main/java/Bot/DiscordBot.java
+/Users/eliasmehr/projects/Discord-bot-alm/src/main/java/Events/ChannelHistoryEvent.java
 /Users/eliasmehr/projects/Discord-bot-alm/src/main/java/Application.java
+/Users/eliasmehr/projects/Discord-bot-alm/src/main/java/Events/MathEvents.java
+/Users/eliasmehr/projects/Discord-bot-alm/src/main/java/Events/InvitationEvent.java

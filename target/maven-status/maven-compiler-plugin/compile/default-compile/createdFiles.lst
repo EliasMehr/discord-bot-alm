@@ -1,2 +1,5 @@
+Events/ChannelHistoryEvent.class
+Events/MathEvents.class
+Events/InvitationEvent.class
 Application.class
 Bot/DiscordBot.class
