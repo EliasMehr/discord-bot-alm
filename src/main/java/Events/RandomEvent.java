@@ -9,6 +9,8 @@ import javax.annotation.Nonnull;
 import java.awt.*;
 import java.util.Random;
 
+import static Bot.DiscordBot.PREFIX;
+
 public class RandomEvent extends ListenerAdapter {
     private EmbedBuilder card = new EmbedBuilder();
 
@@ -17,7 +19,7 @@ public class RandomEvent extends ListenerAdapter {
         card.setColor(Color.BLUE);
         String[] args = event.getMessage().getContentRaw().split("//s+");
 
-        if(!args[0].startsWith(DiscordBot.PREFIX)){ //If the prefix is not present, end method and do nothing
+        if(!args[0].startsWith(PREFIX)){ //If the prefix is not present, end method and do nothing
             return;
         }
         String command = args[0].substring(1);
