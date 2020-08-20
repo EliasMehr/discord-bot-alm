@@ -7,7 +7,7 @@ import javax.annotation.Nonnull;
 import java.util.Random;
 
 import static Bot.DiscordBot.PREFIX;
-import static java.awt.Color.*;
+import static java.awt.Color.RED;
 import static java.awt.Color.BLUE;
 
 public class RandomEvent extends ListenerAdapter {
